@@ -9,4 +9,10 @@
   <Folder Name="/docs/">
     <File Path="README.md" />
   </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Analyzers.Xml/Analyzers.Xml.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Analyzers.Tests/Analyzers.Tests.csproj" />
+  </Folder>
 </Solution>
