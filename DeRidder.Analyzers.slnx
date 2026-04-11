@@ -10,9 +10,9 @@
     <File Path="README.md" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/Analyzers.Xml/Analyzers.Xml.csproj" />
+    <Project Path="src\DeRidder.Analyzers.Xml\DeRidder.Analyzers.Xml.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Analyzers.Tests/Analyzers.Tests.csproj" />
+    <Project Path="tests\DeRidder.Analyzers.Tests\DeRidder.Analyzers.Tests.csproj" />
   </Folder>
 </Solution>

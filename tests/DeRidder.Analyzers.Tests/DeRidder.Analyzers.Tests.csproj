@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+    <RootNamespace>Analyzers.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Analyzers.Xml\Analyzers.Xml.csproj" />
+    <ProjectReference Include="..\..\src\DeRidder.Analyzers.Xml\DeRidder.Analyzers.Xml.csproj" />
   </ItemGroup>
 
   <!--
