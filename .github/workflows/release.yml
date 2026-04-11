@@ -2,6 +2,9 @@ name: Release package
 on:
   release:
     types: [published]
+permissions:
+  id-token: write
+  contents: read
 jobs:
   release:
     name: Release package
