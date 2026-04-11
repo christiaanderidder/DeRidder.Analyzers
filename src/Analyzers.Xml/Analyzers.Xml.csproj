@@ -2,7 +2,7 @@
   <PropertyGroup>
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Ridder.Analyzers.Xml</PackageId>
+    <PackageId>DeRidder.Analyzers.Xml</PackageId>
     <Authors>Christiaan de Ridder</Authors>
     <PackageDescription>Source analyzer suppressions for unavoidable issues when using XmlSerializer</PackageDescription>
     <PackageProjectUrl>https://github.com/christiaanderidder/analyzers</PackageProjectUrl>
