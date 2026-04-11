@@ -17,20 +17,12 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
 
             public class MyModel
             {
-                public List<string> Items { get; init; } = [];
+                public List<string> {|#0:Items|} { get; init; } = [];
             }
-            """,
-        6,
-        25,
-        6,
-        30
+            """
     )]
     public async Task ReportOnPublicTypeWithConcreteList(
         string code,
-        int startLine,
-        int startColumn,
-        int endLine,
-        int endColumn,
         CancellationToken cancellationToken
     )
     {
@@ -41,12 +33,7 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
         };
 
         test.ExpectedDiagnostics.Add(
-            new DiagnosticResult("CA1002", DiagnosticSeverity.Warning).WithSpan(
-                startLine,
-                startColumn,
-                endLine,
-                endColumn
-            )
+            new DiagnosticResult("CA1002", DiagnosticSeverity.Warning).WithLocation(0)
         );
 
         await test.RunAsync(cancellationToken).ConfigureAwait(false);
@@ -61,13 +48,9 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             [XmlRoot("Test")]
             public class MyModel
             {
-                public List<string> Items { get; init; } = [];
+                public List<string> {|#0:Items|} { get; init; } = [];
             }
-            """,
-        7,
-        25,
-        7,
-        30
+            """
     )]
     [Arguments(
         """
@@ -77,13 +60,9 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             public class MyModel
             {
                 [XmlArray("Test")]
-                public List<string> Items { get; init; } = [];
+                public List<string> {|#0:Items|} { get; init; } = [];
             }
-            """,
-        7,
-        25,
-        7,
-        30
+            """
     )]
     [Arguments(
         """
@@ -93,13 +72,9 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             public class MyModel
             {
                 [XmlArrayItem("TestItem")]
-                public List<string> Items { get; init; } = [];
+                public List<string> {|#0:Items|} { get; init; } = [];
             }
-            """,
-        7,
-        25,
-        7,
-        30
+            """
     )]
     [Arguments(
         """
@@ -110,20 +85,12 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             {
                 [XmlElement("Test")]
                 public string Test { get; init; } = "";
-                public List<string> Items { get; init; } = [];
+                public List<string> {|#0:Items|} { get; init; } = [];
             }
-            """,
-        8,
-        25,
-        8,
-        30
+            """
     )]
     public async Task DoNotReportOnPublicTypeWithConcreteListWithXmlSerializerAttributes(
         string code,
-        int startLine,
-        int startColumn,
-        int endLine,
-        int endColumn,
         CancellationToken cancellationToken
     )
     {
@@ -135,7 +102,7 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
 
         test.ExpectedDiagnostics.Add(
             new DiagnosticResult("CA1002", DiagnosticSeverity.Warning)
-                .WithSpan(startLine, startColumn, endLine, endColumn)
+                .WithLocation(0)
                 .WithIsSuppressed(true)
         );
 
