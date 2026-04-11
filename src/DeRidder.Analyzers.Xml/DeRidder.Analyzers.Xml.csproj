@@ -5,11 +5,11 @@
     <PackageId>DeRidder.Analyzers.Xml</PackageId>
     <Authors>Christiaan de Ridder</Authors>
     <PackageDescription>Source analyzer suppressions for unavoidable issues when using XmlSerializer</PackageDescription>
-    <PackageProjectUrl>https://github.com/christiaanderidder/analyzers</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/christiaanderidder/DeRidder.Analyzers</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>logo.png</PackageIcon>
-    <RepositoryUrl>https://github.com/christiaanderidder/analyzers</RepositoryUrl>
+    <RepositoryUrl>https://github.com/christiaanderidder/DeRidder.Analyzers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Copyright>Christiaan de Ridder</Copyright>
     <PackageTags>analyzers CA1002 xmlserializer</PackageTags>
