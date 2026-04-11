@@ -1,4 +1,5 @@
 using Analyzers.Xml;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
@@ -18,10 +19,18 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             {
                 public List<string> Items { get; init; } = [];
             }
-            """
+            """,
+        6,
+        25,
+        6,
+        30
     )]
     public async Task ReportOnPublicTypeWithConcreteList(
         string code,
+        int startLine,
+        int startColumn,
+        int endLine,
+        int endColumn,
         CancellationToken cancellationToken
     )
     {
@@ -31,7 +40,14 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             ReferenceAssemblies = ReferenceAssemblies.Net.Net100,
         };
 
-        // TODO: Update test to expect CA1002
+        test.ExpectedDiagnostics.Add(
+            new DiagnosticResult("CA1002", DiagnosticSeverity.Warning).WithSpan(
+                startLine,
+                startColumn,
+                endLine,
+                endColumn
+            )
+        );
 
         await test.RunAsync(cancellationToken).ConfigureAwait(false);
     }
@@ -47,7 +63,11 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             {
                 public List<string> Items { get; init; } = [];
             }
-            """
+            """,
+        7,
+        25,
+        7,
+        30
     )]
     [Arguments(
         """
@@ -59,7 +79,11 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
                 [XmlArray("Test")]
                 public List<string> Items { get; init; } = [];
             }
-            """
+            """,
+        7,
+        25,
+        7,
+        30
     )]
     [Arguments(
         """
@@ -71,7 +95,11 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
                 [XmlArrayItem("TestItem")]
                 public List<string> Items { get; init; } = [];
             }
-            """
+            """,
+        7,
+        25,
+        7,
+        30
     )]
     [Arguments(
         """
@@ -84,10 +112,18 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
                 public string Test { get; init; } = "";
                 public List<string> Items { get; init; } = [];
             }
-            """
+            """,
+        8,
+        25,
+        8,
+        30
     )]
     public async Task DoNotReportOnPublicTypeWithConcreteListWithXmlSerializerAttributes(
         string code,
+        int startLine,
+        int startColumn,
+        int endLine,
+        int endColumn,
         CancellationToken cancellationToken
     )
     {
@@ -97,7 +133,11 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
             ReferenceAssemblies = ReferenceAssemblies.Net.Net100,
         };
 
-        // TODO: Update test to expect no diagnostics since CA1002 should be suppressed by SuppressDoNotExposeGenericListsForXmlSerializer
+        test.ExpectedDiagnostics.Add(
+            new DiagnosticResult("CA1002", DiagnosticSeverity.Warning)
+                .WithSpan(startLine, startColumn, endLine, endColumn)
+                .WithIsSuppressed(true)
+        );
 
         await test.RunAsync(cancellationToken).ConfigureAwait(false);
     }
