@@ -10,7 +10,7 @@ namespace DeRidder.Analyzers.Xml;
 public class SuppressDoNotExposeGenericListsForXmlSerializer : DiagnosticSuppressor
 {
     private static readonly SuppressionDescriptor Rule = new(
-        "SP1002",
+        "RID1002",
         "CA1002",
         "Suppress CA1002 when the type is used by XmlSerializer. XmlSerializer requires public types and properties as well as concrete collection types."
     );
