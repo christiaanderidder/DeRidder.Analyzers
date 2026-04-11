@@ -28,4 +28,8 @@
     <None Include="../../README.md" Pack="true" PackagePath="" />
     <None Include="../../img/logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="AnalyzerReleases.Shipped.md" />
+    <AdditionalFiles Include="AnalyzerReleases.Unshipped.md" />
+  </ItemGroup>
 </Project>
