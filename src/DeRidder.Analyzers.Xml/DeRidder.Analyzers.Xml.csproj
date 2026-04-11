@@ -14,8 +14,6 @@
     <Copyright>Christiaan de Ridder</Copyright>
     <PackageTags>analyzers CA1002 xmlserializer</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <!-- Analyzer packaging -->
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
