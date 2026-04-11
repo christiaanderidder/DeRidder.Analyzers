@@ -1,3 +1,4 @@
+using Analyzers.Tests.Helpers;
 using Analyzers.Xml;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Testing;
@@ -110,7 +111,7 @@ internal sealed class SuppressDoNotExposeGenericListsForXmlSerializerTests
     }
 
     private sealed class SuppressorTest
-        : CSharpAnalyzerTest<SuppressDoNotExposeGenericListsForXmlSerializer, DefaultVerifier>
+        : CSharpAnalyzerTest<SuppressDoNotExposeGenericListsForXmlSerializer, TUnitVerifier>
     {
         // We need to load CA1002 (Do not expose generic lists) to test suppressing it
         protected override IEnumerable<DiagnosticAnalyzer> GetDiagnosticAnalyzers() =>
