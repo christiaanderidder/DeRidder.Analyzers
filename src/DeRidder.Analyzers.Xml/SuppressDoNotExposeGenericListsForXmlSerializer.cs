@@ -31,8 +31,10 @@ public class SuppressDoNotExposeGenericListsForXmlSerializer : DiagnosticSuppres
         "System.Xml.Serialization.XmlChoiceIdentifierAttribute"
     );
 
-    public override ImmutableArray<SuppressionDescriptor> SupportedSuppressions =>
+    private static readonly ImmutableArray<SuppressionDescriptor> Suppressions =
         ImmutableArray.Create(Rule);
+
+    public override ImmutableArray<SuppressionDescriptor> SupportedSuppressions => Suppressions;
 
     public override void ReportSuppressions(SuppressionAnalysisContext context)
     {
