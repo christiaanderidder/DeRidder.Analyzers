@@ -15,8 +15,7 @@ public class SuppressDoNotExposeGenericListsForXmlSerializer : DiagnosticSuppres
         "Suppress CA1002 when the type is used by XmlSerializer. XmlSerializer requires public types and properties as well as concrete collection types."
     );
 
-    private static readonly ImmutableArray<string> XmlSerializerAttributes =
-    [
+    private static readonly ImmutableArray<string> XmlSerializerAttributes = ImmutableArray.Create(
         "System.Xml.Serialization.XmlRootAttribute",
         "System.Xml.Serialization.XmlTypeAttribute",
         "System.Xml.Serialization.XmlElementAttribute",
@@ -29,10 +28,11 @@ public class SuppressDoNotExposeGenericListsForXmlSerializer : DiagnosticSuppres
         "System.Xml.Serialization.XmlEnumAttribute",
         "System.Xml.Serialization.XmlAnyElementAttribute",
         "System.Xml.Serialization.XmlAnyAttributeAttribute",
-        "System.Xml.Serialization.XmlChoiceIdentifierAttribute",
-    ];
+        "System.Xml.Serialization.XmlChoiceIdentifierAttribute"
+    );
 
-    public override ImmutableArray<SuppressionDescriptor> SupportedSuppressions => [Rule];
+    public override ImmutableArray<SuppressionDescriptor> SupportedSuppressions =>
+        ImmutableArray.Create(Rule);
 
     public override void ReportSuppressions(SuppressionAnalysisContext context)
     {
