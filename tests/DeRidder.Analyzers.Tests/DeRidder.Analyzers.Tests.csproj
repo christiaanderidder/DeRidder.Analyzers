@@ -23,7 +23,7 @@
   -->
   <ItemGroup>
     <Reference Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <HintPath>$(PkgMicrosoft_CodeAnalysis_NetAnalyzers)\analyzers\dotnet\Microsoft.CodeAnalysis.NetAnalyzers.dll</HintPath>
+      <HintPath>$(PkgMicrosoft_CodeAnalysis_NetAnalyzers)\analyzers\dotnet\cs\Microsoft.CodeAnalysis.NetAnalyzers.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
