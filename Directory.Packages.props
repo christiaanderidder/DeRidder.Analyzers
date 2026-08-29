@@ -9,6 +9,6 @@
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.9.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.400" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="5.9.0" />
-    <PackageVersion Include="TUnit" Version="1.65.38" />
+    <PackageVersion Include="TUnit" Version="1.65.68" />
   </ItemGroup>
 </Project>
