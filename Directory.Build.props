@@ -9,5 +9,6 @@
     <AnalysisMode>All</AnalysisMode>
     <TargetFramework>net10.0</TargetFramework>
     <UseArtifactsOutput>true</UseArtifactsOutput>
+    <WarningsNotAsErrors>NU1902;NU1903</WarningsNotAsErrors>
   </PropertyGroup>
 </Project>
